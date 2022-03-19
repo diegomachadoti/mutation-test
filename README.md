@@ -17,3 +17,7 @@ Uma aplicação onde são vendidos vários produtos seguindo as seguintes regras
 
 ## Reports are generated under 
 >> 'build/reports/pitest'
+
+### Analise de Código
+Projeto configurado no sonarCloud
+> https://sonarcloud.io/project/overview?id=diegomachadoti_python-api-test
