@@ -9,32 +9,32 @@ class ProductTest {
     @Test
     fun `deve retornar preço sem desconto`() {
         val product = Product()
-        val amount = 2
+        val amount = 2 // abaixo de 10 sem cupom
         val price = product.getPrice(amount, false)
-        Assert.assertEquals(price, 46)
+        Assert.assertEquals(price, 46) // R$ 23x2
     }
 
     @Test
     fun `deve retornar preço com desconto por valor`() {
         val product = Product()
-        val amount = 100
+        val amount = 100 // acima de 10 sem cupom
         val price = product.getPrice(amount, false)
-        Assert.assertEquals(price, 1700)
+        Assert.assertEquals(price, 1700) // R$ 17x100
     }
 
     @Test
     fun `deve retornar preço com desconto por cupom`() {
         val product = Product()
-        val amount = 5
+        val amount = 5 // abaixo de 10 com cupom
         val price = product.getPrice(amount, true)
-        Assert.assertEquals(price, 85)
+        Assert.assertEquals(price, 85) // R$ 17x5
     }
 
     @Test
     fun `deve retornar preço com desconto por valor = 10`() {
         val product = Product()
-        val amount = 10
+        val amount = 10 // igual a 10 sem cupom
         val price = product.getPrice(amount, false)
-        Assert.assertEquals(price, 170)
+        Assert.assertEquals(price, 170) // R$ 17x10
     }
 }
