@@ -12,8 +12,18 @@ Uma aplicação onde são vendidos vários produtos seguindo as seguintes regras
 > Se possuir um cupom de desconto
 > > O valor do produto será 17,00
 
+## For running jacoco (Java Code Coverage):
+***Biblioteca do java para cobertura de teste***
+>> ./gradlew build jacocoTestReport
+#### ***build/reports/jacoco***
+
 Rodando coverage dos testes unitários
 ![img_2.png](img_2.png)
+
+## For running mutation tests run:
+***Ferramenta para realização de testes de mutação***
+>> ./gradlew clean pitest
+#### ***build/reports/pitest***
 
 Rodando os testes um dos testes de mutação sobreviveu com isso temos um problema no desenvolvimento da funcionalidade ***Product***
 - Alterou um dos operadores de ***>*** para ***>=*** e nosso teste não quebrou
@@ -37,16 +47,6 @@ Rodando os testes um dos testes de mutação sobreviveu com isso temos um proble
 3. Rodar a bateria de teste de mutação novamente
 ![img_1.png](img_1.png)
 **Nenhum teste de mutação sobreviveu com isso os testes unitários estão eficientes.**
-
-## For running jacoco (Java Code Coverage):
-***Biblioteca do java para cobertura de teste***
->> ./gradlew build jacocoTestReport
-#### ***build/reports/jacoco***
-
-## For running mutation tests run:
-***Ferramenta para realização de testes de mutação***
->> ./gradlew clean pitest
-#### ***build/reports/pitest***
 
 ### Analise de Código
 Projeto configurado no sonarCloud 
