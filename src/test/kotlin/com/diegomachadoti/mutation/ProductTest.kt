@@ -23,7 +23,7 @@ class ProductTest {
     }
 
     @Test
-    fun `deve retornar preço com desconto por cupom`() {
+    fun `deve retornar preço com desconto por cupom (valor abaixo)`() {
         val product = Product()
         val amount = 5 // abaixo de 10 com cupom
         val price = product.getPrice(amount, true)
@@ -31,6 +31,14 @@ class ProductTest {
     }
 
     @Test
+    fun `deve retornar preço com desconto por cupom (valor acima)`() {
+        val product = Product()
+        val amount = 11 // acima de 10 com cupom
+        val price = product.getPrice(amount, true)
+        Assert.assertEquals(price, 187) // R$ 17x11
+    }
+
+    @Ignore // Adicionar teste para cobertura apos correção do BUG
     fun `deve retornar preço com desconto por valor = 10`() {
         val product = Product()
         val amount = 10 // igual a 10 sem cupom
